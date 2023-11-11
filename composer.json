@@ -1,0 +1,27 @@
+{
+    "name": "spongelias/automator",
+    "description": "Automation tool for PHP",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Automator\\": "./src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elias Kleppinger",
+            "email": "e.kleppinger@proton.me"
+        }
+    ],
+    "require": {
+        "klein/klein": "^2.1",
+        "latte/latte": "^3.0",
+        "doctrine/orm": "^2.11.0",
+        "doctrine/dbal": "^3.2",
+        "symfony/yaml": "^5.4",
+        "symfony/cache": "^5.4",
+        "adbario/php-dot-notation": "^3.3",
+      "ext-http": "*"
+    }
+}

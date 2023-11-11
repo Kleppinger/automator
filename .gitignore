@@ -1,0 +1,5 @@
+bin/apache/
+vendor/
+composer.lock/
+src/Application/View/cache/
+.idea/

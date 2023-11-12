@@ -16,13 +16,13 @@ class Router
         $this->application = $application;
         $this->klein = new Klein();
         $klein = $this->klein;
-        $controllers = $this->application->controllerCollection->toArray();
-        foreach($controllers as $controller) {
-            $controller->registerRoute($klein);
-        }
     }
 
     public function run() {
+        $controllers = $this->application->controllerCollection->toArray();
+        foreach($controllers as $controller) {
+            $controller->registerRoute($this->klein);
+        }
         $this->klein->dispatch();
     }
 

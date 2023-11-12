@@ -1,9 +1,12 @@
 <?php
 
+function __generate_random_string(int $length = 32) {
+    return $secret = substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
+}
+
 function __config__create_secret(string $file): string
 {
-    $length = 32;
-    $secret = substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
+    $secret = __generate_random_string();
     file_put_contents($file, $secret);
     return $secret;
 }

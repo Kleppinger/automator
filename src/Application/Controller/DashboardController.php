@@ -9,6 +9,11 @@ class DashboardController extends Controller
 {
 
     public function home() {
+        $currentSession = SessionController::$instance->getCurrentSession();
+        if(!$currentSession->getUser()) {
+            header("Location: /login");
+            die;
+        }
         $this->view("Home.latte");
     }
     public function registerRoute(Klein $klein): void

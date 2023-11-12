@@ -14,6 +14,8 @@ class Session
     #[ORM\GeneratedValue]
     private ?int $id = null;
 
+    #[ORM\Column(type: 'string')]
+    public string $identifier;
 
     #[ORM\OneToOne(inversedBy: 'session', targetEntity: User::class)]
     #[ORM\JoinColumn(name: 'user_id', referencedColumnName: 'id')]
@@ -95,6 +97,16 @@ class Session
     public function setActive(bool $active): void
     {
         $this->active = $active;
+    }
+
+    public function getIdentifier(): string
+    {
+        return $this->identifier;
+    }
+
+    public function setIdentifier(string $identifier): void
+    {
+        $this->identifier = $identifier;
     }
 
 

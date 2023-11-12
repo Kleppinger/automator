@@ -3,3 +3,6 @@ vendor/
 composer.lock/
 src/Application/View/cache/
 .idea/
+node_modules/
+assets/style.css
+assets/style.css.map

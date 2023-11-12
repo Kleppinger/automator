@@ -37,6 +37,10 @@ class Database
         ], $ormConfig);
 
         $this->entityManager = new EntityManager($this->connection, $ormConfig);
+
+    }
+
+    public function createUser() {
         $users = $this->entityManager->getRepository(User::class)->findAll();
         if(is_countable($users) && count($users) == 0) {
             // Create admin user

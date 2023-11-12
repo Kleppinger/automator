@@ -34,7 +34,6 @@ class Application
         $this->database = new Database($this);
 
         $this->controllerCollection = new ControllerCollection();
-        $this->loadControllers();
         $this->router = new Router($this);
     }
 
@@ -64,6 +63,8 @@ class Application
 
 
     public function run() {
+        $this->database->createUser();
+        $this->loadControllers();
         $this->router->run();
     }
 
